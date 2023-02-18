@@ -1,0 +1,112 @@
+.header{
+    padding: 4.5rem 0;
+    @include flexbox();
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    // height: 15rem;
+    &-auth{
+        margin-left: auto;
+    }
+    &-logo{
+        margin-right: 18rem;
+    }
+    &-menu{
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+
+        &-item{
+            display: inline-block;
+            &:not(:first-child){
+                margin-left: 7.5rem;
+            }
+        }
+        &-link{
+            transition: all .1s ease-in;
+            color: $gray-dark;
+            &:hover{
+                color: $primary-color;
+            }
+        }
+    }
+// responsive
+    @media screen and (min-width: 1024px) {
+        .header-menu-item:not(:first-child) {
+        margin-left: 75px;
+        }
+        .menu-toggle {
+        display: none;
+        }
+    }
+    @media screen and (max-width: 1279px){
+        &-logo{
+            margin-right: 5rem;
+        }
+        &-menu{
+            margin: 0 auto; 
+        }
+        // .menu-toggle{
+        //     display: none;
+        // }
+    }
+    @media screen and (max-width: 1023px){
+        .header-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 90%;
+            max-width: 300px;
+            background-color: white;
+            z-index: 99999;
+            display: block;
+            bottom: 0;
+            border-left: 1px solid #eee;
+            padding: 50px 15px;
+            transition: transform 0.25s linear;
+            transform: translateX(100%);
+            &-item{
+                &:not(:first-child){
+                    margin-left: 0;
+                }
+                display: block;
+                transition: all linear 0.2s;
+                &:hover{
+                    background-color: $primary-color;
+                    color: white;
+                }
+            }
+        }
+
+        
+          .header-menu.is-active {
+            transform: translateX(0);
+          }
+          .header-auth {
+            margin-left: auto;
+          }
+          .header-menu-link {
+            display: block;
+            padding: 20px;
+            border-radius: 6px;
+            &:hover {
+              color: white;
+              background-color: $primary-color;
+            }
+          }
+          .menu-toggle{
+            padding-left: 3rem;
+          }
+    }
+    @media screen and (max-width: 767px){
+        &-logo{
+            max-width: 100px;
+            margin-right: 0;
+        }
+        padding: 2rem 0;
+        .menu-toggle{
+            padding-left: 2rem;
+          }
+    }
+}
+

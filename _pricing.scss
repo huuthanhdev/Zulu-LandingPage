@@ -1,0 +1,119 @@
+.pricing{
+    margin-bottom: 10rem;
+    &-symbol{
+        vertical-align: top;
+    }
+    &-list{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 9rem;
+    }
+    &-item{
+        max-width: calc(33.33% - 3rem);
+        border: 1px solid rgba($color: $gray-blur, $alpha: 0.5);
+        border-radius: 15px;
+        padding: 8rem 3rem;
+        // note: fix lỗi flex --> cho button center
+        display: flex;
+        flex-direction: column;
+        .button{
+            margin: auto auto 0;
+            display: block;
+            width: max-content;
+        }
+        position: relative;
+    }
+    
+    // CSS cho item
+    &-name{
+        font-size: 2rem;
+        color: $gray-dark;
+        margin-bottom: 25px;
+    }
+    &-price{
+        padding-bottom: 4.5rem;
+        margin-bottom: 4.5rem;
+        position: relative;
+        &:after{
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: $gray-blur;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &-month{
+        font-size: 4rem;
+        font-weight: 500;
+    }
+    &-desc{
+        margin-bottom: 6.5rem;
+        color: $gray-blur;
+    }
+    &-feature{
+        margin-bottom: 5.5rem;
+    }
+    &-feature-item{
+        color: $gray-blur;
+        margin-bottom: 2.8rem;
+        // fix: ast-child là thẻ a--> nên css cho last-of-type
+        &:last-of-type{
+            margin-bottom: 7.5rem;
+        }
+        
+    }
+    // hover
+    &-item{
+        @include hover-shadow();
+    }
+    .button:hover{
+        border: transparent;
+        background-color: $primary-color;
+        color: white;
+    }
+    // label
+    &-label{
+        // width: 12rem;
+        // height: 4.5rem;
+        background-color: #ff858d;
+        color: white;
+        border-radius: 0 1.5rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: center;
+        padding: 1.7rem;
+        text-transform: capitalize;
+    }
+    @media screen and (max-width: 1279px){
+        &-item{
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+    }
+    @media screen and (max-width: 1023px){
+        &-list{
+            display: block;
+            margin-top: 5rem;
+        }
+        &-item{
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            padding: 5rem 3rem;
+        }
+        .button{
+            padding: 2rem 3rem;
+        }
+        &-desc{
+            margin-bottom: 3rem;
+        }
+    }
+    @media screen and (max-width: 767px){
+        &-feature-item{
+            margin-bottom: 1.8rem;
+        }
+    }
+}
