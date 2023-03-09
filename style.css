@@ -424,6 +424,7 @@ mobile: 320 480 768 1024 1280 1366 1440 1600 1920
 @media screen and (max-width: 479px) {
   .work-list {
     grid-auto-columns: 80%;
+    padding-bottom: 0;
   }
 }
 
@@ -610,8 +611,32 @@ mobile: 320 480 768 1024 1280 1366 1440 1600 1920
   }
 }
 @media screen and (max-width: 479px) {
+  .pricing-price {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+  .pricing-desc {
+    margin-bottom: 0;
+  }
+  .pricing-feature {
+    margin-bottom: 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
   .pricing-list {
     grid-auto-columns: 80%;
+  }
+  .pricing-feature-title {
+    font-size: 13px;
+  }
+  .pricing-feature-item:last-of-type {
+    margin-bottom: 4rem;
+  }
+  .pricing-item {
+    padding-bottom: 3rem;
+  }
+  .pricing-label {
+    padding: 1rem;
   }
 }
 
@@ -699,13 +724,33 @@ mobile: 320 480 768 1024 1280 1366 1440 1600 1920
 }
 @media screen and (max-width: 1023px) {
   .client-list {
-    display: block;
+    display: grid;
+    justify-content: flex-start;
+    grid-auto-columns: 400px;
+    grid-auto-flow: column;
+    grid-gap: 0 5rem;
+    overflow: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding: 1rem;
+    grid-template-columns: unset;
+  }
+  .client-list::-webkit-scrollbar {
+    display: none;
+    width: 0;
   }
   .client-list > * {
+    scroll-snap-align: start;
     width: 100%;
-    max-width: 300px;
-    padding: 3rem 1.5rem;
-    margin: 0 auto 2rem;
+  }
+}
+@media screen and (max-width: 479px) {
+  .client-list {
+    grid-auto-columns: 80%;
   }
 }
 

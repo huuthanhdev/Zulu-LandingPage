@@ -98,6 +98,7 @@
     @media screen and (max-width: 479px) {
         &-list {
           grid-auto-columns: 80%;
+          padding-bottom: 0;
         }
     }
 }

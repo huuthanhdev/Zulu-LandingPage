@@ -61,8 +61,7 @@
         // fix: ast-child là thẻ a--> nên css cho last-of-type
         &:last-of-type{
             margin-bottom: 7.5rem;
-        }
-        
+        }  
     }
     // hover
     &-item{
@@ -143,8 +142,34 @@
         }
     }
     @media screen and (max-width: 479px) {
+        &-price{
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+        &-desc{
+            margin-bottom: 0;
+        }
+        &-feature{
+            margin-bottom: 0;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
         &-list {
           grid-auto-columns: 80%;
+        }
+        &-feature-title{
+            font-size: 13px;
+        }
+        &-feature-item{
+            &:last-of-type{
+                margin-bottom: 4rem;
+            }  
+        }
+        &-item{
+            padding-bottom: 3rem;
+        }
+        &-label{
+            padding: 1rem;
         }
       }
 }
