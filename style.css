@@ -158,6 +158,7 @@ mobile: 320 480 768 1024 1280 1366 1440 1600 1920
 .header-menu-link {
   transition: all 0.1s ease-in;
   color: #272e35;
+  position: relative;
 }
 .header-menu-link:hover {
   color: #579aff;
@@ -395,31 +396,34 @@ mobile: 320 480 768 1024 1280 1366 1440 1600 1920
   }
 }
 @media screen and (max-width: 1023px) {
-  .work-item {
-    width: calc(33.33% - 2rem);
-    padding: 2rem 1.5rem;
+  .work-list {
+    display: grid;
+    justify-content: flex-start;
+    grid-auto-columns: 400px;
+    grid-auto-flow: column;
+    grid-gap: 0 5rem;
+    overflow: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding: 1rem;
+    grid-template-columns: unset;
   }
-  .work-title {
-    font-size: 2rem;
+  .work-list::-webkit-scrollbar {
+    display: none;
+    width: 0;
   }
-  .work-desc {
-    margin-bottom: 4rem;
+  .work-list > * {
+    scroll-snap-align: start;
+    width: 100%;
   }
 }
-@media screen and (max-width: 767px) {
-  .work-caption {
-    font-size: 1.3rem;
-  }
-  .work-title span {
-    font-size: 4rem;
-  }
+@media screen and (max-width: 479px) {
   .work-list {
-    display: unset;
-  }
-  .work-item {
-    width: 100%;
-    max-width: 300px;
-    margin: 3rem auto 2.5rem;
+    grid-auto-columns: 80%;
   }
 }
 
@@ -498,7 +502,7 @@ mobile: 320 480 768 1024 1280 1366 1440 1600 1920
   margin-top: 9rem;
 }
 .pricing-item {
-  max-width: calc(33.33% - 3rem);
+  width: calc(33.33% - 3rem);
   border: 1px solid rgba(136, 143, 148, 0.5);
   border-radius: 15px;
   padding: 8rem 3rem;
@@ -558,7 +562,7 @@ mobile: 320 480 768 1024 1280 1366 1440 1600 1920
   color: white;
 }
 .pricing-label {
-  background-color: #ff858d;
+  background-color: rgb(238, 132, 172);
   color: white;
   border-radius: 0 1.5rem;
   position: absolute;
@@ -576,25 +580,38 @@ mobile: 320 480 768 1024 1280 1366 1440 1600 1920
 }
 @media screen and (max-width: 1023px) {
   .pricing-list {
-    display: block;
-    margin-top: 5rem;
+    display: grid;
+    justify-content: flex-start;
+    grid-auto-columns: 400px;
+    grid-auto-flow: column;
+    grid-gap: 0 5rem;
+    overflow: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding: 1rem;
+    grid-template-columns: unset;
   }
-  .pricing-item {
+  .pricing-list::-webkit-scrollbar {
+    display: none;
+    width: 0;
+  }
+  .pricing-list > * {
+    scroll-snap-align: start;
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto 4rem;
-    padding: 5rem 3rem;
-  }
-  .pricing .button {
-    padding: 2rem 3rem;
-  }
-  .pricing-desc {
-    margin-bottom: 3rem;
   }
 }
 @media screen and (max-width: 767px) {
   .pricing-feature-item {
     margin-bottom: 1.8rem;
+  }
+}
+@media screen and (max-width: 479px) {
+  .pricing-list {
+    grid-auto-columns: 80%;
   }
 }
 
