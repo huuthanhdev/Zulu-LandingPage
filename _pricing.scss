@@ -87,33 +87,56 @@
         padding: 1.7rem;
         text-transform: capitalize;
     }
-    @media screen and (max-width: 1279px){
-        &-item{
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-        }
-    }
+    // @media screen and (max-width: 1279px){
+    //     &-item{
+    //         padding-top: 5rem;
+    //         padding-bottom: 5rem;
+    //     }
+    // }
     @media screen and (max-width: 1023px){
-        &-list{
-            display: block;
-            margin-top: 5rem;
+        &-list {
+            display: grid;
+            justify-content: flex-start;
+            grid-auto-columns: 90%;
+            grid-auto-flow: column;
+            grid-gap: 1.5rem;
+            overflow: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-snap-stop: always;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            -webkit-overflow-scrolling: touch;
+            scroll-padding: 1rem;
+            grid-template-columns: unset;
+            &::-webkit-scrollbar {
+                display: none;
+                width: 0;
+            }
+            &  > *{
+                scroll-snap-align: start;
+            }  
         }
-        &-item{
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto 4rem;
-            padding: 5rem 3rem;
-        }
-        .button{
-            padding: 2rem 3rem;
-        }
-        &-desc{
-            margin-bottom: 3rem;
-        }
+        // &-list{
+        //     display: block;
+        //     margin-top: 5rem;
+        // }
+        // &-item{
+        //     width: 100%;
+        //     max-width: 600px;
+        //     margin: 0 auto 4rem;
+        //     padding: 5rem 3rem;
+        // }
+        // .button{
+        //     padding: 2rem 3rem;
+        // }
+        // &-desc{
+        //     margin-bottom: 3rem;
+        // }
     }
-    @media screen and (max-width: 767px){
-        &-feature-item{
-            margin-bottom: 1.8rem;
-        }
-    }
+    // @media screen and (max-width: 767px){
+    //     &-feature-item{
+    //         margin-bottom: 1.8rem;
+    //     }
+    // }
 }
