@@ -25,6 +25,7 @@
         &-link{
             transition: all .1s ease-in;
             color: $gray-dark;
+            position: relative;
             &:hover{
                 color: $primary-color;
             }
